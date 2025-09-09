@@ -1,0 +1,36 @@
+/* sidebar.css */
+.sidebar {
+    width: 240px;
+    background: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    position: relative;
+  
+    border: 2px solid transparent;
+    border-radius: 16px;
+    background-clip: padding-box; /* keep bg inside */
+  }
+  
+  .sidebar::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* cover full area */
+    padding: 2px; /* border thickness */
+    border-radius: 16px;
+    background: linear-gradient(
+      135deg,
+      #3b82f6,   /* blue */
+      #8b5cf6,   /* purple */
+      #22c55e    /* green */
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none; /* don’t block clicks */
+  }
+  
